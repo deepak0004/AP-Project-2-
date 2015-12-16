@@ -1,7 +1,3 @@
-/*
- * author : Deepak Thukral, Darvesh Punia
- * Roll no: 2014036
- */
 package admin;
 
 import java.io.IOException;

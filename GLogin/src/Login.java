@@ -1,5 +1,3 @@
-/*
- * author : Deepak Thukral, Darvesh Punia
  * Roll no: 2014036
  */
 import java.io.IOException;
