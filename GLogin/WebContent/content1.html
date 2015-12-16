@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+body{
+	padding:0;
+	margin:0;
+}
+#container{
+	height: 2000px;
+	width:700px;
+	background-color: #eaeaea;
+	margin:20px;
+	font-family: sans-serif;
+}
+#upper_tabs ul{
+	margin:0;padding:0;
+	list-style: none;
+	background-color: indigo;
+	overflow: auto;
+}
+#upper_tabs ul li{
+	float:left;
+	padding:10px;
+	background-color: indigo;
+	color:white;
+	border-left:1px solid white;
+	cursor: pointer;
+	transition:.2s;
+}
+#upper_tabs ul li:hover{
+	background-color: #33cc33 !important;
+}
+#form_1, #form_2, #form_3, #form_4, #form_4{
+	width:100%;
+	height:550px;
+}
+#form_1 ul li{
+	margin:35px;
+	margin-left:40px;
+}
+#form_2 ul li, #form_3 ul li, #form_4 ul li, #form_5 ul li{
+	margin:15px;
+	margin-left:40px;
+}
+.common{
+	padding:6px;
+	width:45%;
+	left:18%;
+	position: relative;
+}
+</style>
+</head>
+<body>
+
+<div id='container'>
+	<p style='color:white;font-weight:bold;padding:10px;background-color:royalblue;border-raduis:5px;font-size:1.5em'>Applicant End
+	<span style='float:right'><a href='Login' style='text-decoration:none;color:white'>Log Out</a></span>
+	</p>
+	<div id='upper_tabs'>
+		<ul>
+			<li style="background-color:#33cc33">Personal Information</li>
+			<li>Educational Information</li>
+			<li>Payment Info</li>
+			<li>FeedBack</li>
+			<li>Submit</li>
+		</ul>
+	</div>
+	<form method='post' enctype="multipart/form-data" action='http://localhost:8080/GLogin/WriteData'>
+		<div id='form_1'>
+			<ul style='margin:0;padding:0;list-style: none;overflow: auto;'>

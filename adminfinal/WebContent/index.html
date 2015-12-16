@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+body
+{
+
+	padding:0;
+	margin:0;
+}
+#container
+{
+	height: 750px;
+	width:750px;
+	background-color: #eaeaea;
+	margin:20px;
+	font-family: sans-serif;
+}
+#upper_tabs ul
+{
+	margin:0;padding:0;
+	list-style: none;
+	background-color: indigo;
+	overflow: auto;
+}
+#upper_tabs ul li{
+	float:left;
+	padding:10px;
+	background-color: indigo;
+	color:white;
+	border-left:1px solid white;
+	cursor: pointer;
+	transition:.2s;
+}
+#upper_tabs ul li:hover{
+	background-color: #33cc33 !important;
+}
+#form_1, #form_2, #form_3{
+	width:100%;
+	height:550px;
+}
+#form_1 ul li{
+	margin:35px;
+	margin-left:40px;
+}
+#form_2 ul li, #form_3 ul li{
+	margin:15px;
+	margin-left:40px;
+}
+.common{
+	padding:6px;
+	width:45%;
+	left:18%;
+	position: relative;
+}
+</style>
+</head>
+<body>
+
+<div id='container'>
+	<p style='color:white;font-weight:bold;padding:10px;background-color:royalblue;border-raduis:5px;font-size:1.5em'>Filter Entries
+	<span style='float:right'><a href='Login2' style='text-decoration:none;color:white'>Log Out</a></span></p>
+	<div id='upper_tabs'>
+		<ul>
+			<li style="background-color:#33cc33">Personal Information</li>
+			<li>Educational Information</li>
+			<li>Submit</li>
+		</ul>
+	</div>
+	<form method='get' action='http://localhost:8080/adminfinal/filteredcontent'>
+		<div id='form_1'>
+			<ul style='margin:0;padding:0;list-style: none;overflow: auto;'>
+				<li>
+					Email<input type='text' name='us1' class='common' style="margin-left:66px;">
+				</li>
+				<li>
+					Name<input type='text' name='us2' class='common' style="margin-left:63px;">
+				</li>
+				<li>
+					Enrollment No.<input type='text' name='us3' class='common'>
+				</li>
+				<li>
+					Category 
+						<select class='common' style="margin-left:35px;width:48%" name='us4'>
+							<option value='all'>All</option>
+							<option value='General'>General</option>
+							<option value='SC'>S.C</option>
+							<option value='ST'>S.T</option>
+							<option value='OBC'>O.B.C</option>
+						</select>
+				</li>
+				<li>
+					Gender
+					<input type='radio' name='gender' value='Male' style='margin-left:25.5%'>Male
+					<input type='radio' name='gender' value='Female' style='margin-left:3%'>Female
+				</li>
+				<li>
+					Physically Disabled
+					<input type='radio' name='phyd' value='Yes' style='margin-left:12%'>Yes
+					<input type='radio' name='phyd' value='No' style='margin-left:3%'>No
+				</li>
+				<li>
+					Date Of Birth
+					<input type='radio' name='dob' value='before' style='margin-left:19.3%'>Before
+					<input type='radio' name='dob' value='on' style='margin-left:3%'>On
+					<input type='radio' name='dob' value='after' style='margin-left:3%'>After
+				</li>
+				<li>
+					<input type='date' name='date' id='current_date' class='common' style="margin-left:103px;">
+				</li>
+			</ul>
+		</div>
+		<div id='form_2'  style='display:none;'>
+			<ul style='margin:0;padding:0;list-style: none;overflow: auto;'>
+				<li>
+					PhD Stream
+						<select class='common' style="margin-left:63px;width:48%" name='us6'>
+							<option value='all'>All</option>
+							<option value='Computer Science'>Computer Science</option>
+							<option value='Electronics and Communication'>Electronics and Communication</option>
+							<option value='Computational Biology'>Computational Biology</option>
+							<option value='Other'>Other</option>
+						</select>
+				</li>
+				<li>
+					Graduation Degree 
+						<select class='common' style="margin-left:15px;width:48%" name='us7'>
+							<option value='all'>All</option>
+							<option value='B.Tech'>B.Tech</option>
+							<option value='Computer Science'>Computer Science</option>
+							<option value='Electronics and Communication'>Electronics and Communication</option>
+							<option value='Mechanical'>Mechanical</option>
+							<option value='Electrical'>Electrical</option>
+							<option value='Civil'>Civil</option>
+							<option value='Other'>Other</option>
+						</select>
+				</li>
+				<li>
+					Post Graduation Degree 
+						<select class='common' style="margin-left:-22px;width:48%" name='us8'>
+							<option value='all'>All</option>
+							<option value='M.Tech'>M.Tech</option>
+							<option value='Biotechnology'>Biotechnology</option>
+							<option value='Signals and Systems'>Signals and Systems</option>
+							<option value='VLSI'>VLSI</option>
+							<option value='Image Processing'>Image Processing</option>
+							<option value='Mathematical Computation'>Mathematical Computation</option>
+							<option value='Other'>Other</option>
+							<option value='all'>All</option>
+						</select>
+				</li>
+				<li>
+					Class X Board 
+						<select class='common' style="margin-left:50px;width:48%" name='us9'>
+							<option value='all'>All</option>
+							<option value='ICSE'>ICSE</option>
+							<option value='CBSE'>CBSE</option>
+							<option value='State Board'>State Board</option>
+							<option value='Andhra Pradesh Board of Intermediate Education'>Andhra Pradesh Board of Intermediate Education</option>
+							<option value='Andhra Pradesh Board of Secondary Education'>Andhra Pradesh Board of Secondary Education</option>
+							<option value='Board of Higher Secondary Education, Delhi'>Board of Higher Secondary Education, Delhi</option>
+							<option value='Assam Board of Secondary Education'>Assam Board of Secondary Education</option>
+							<option value='Bihar School Examination Board'>Bihar School Examination Board</option>
+							<option value='Central Board of Secondary Education'>Central Board of Secondary Education</option>
+							<option value='Central Board Of Patna, Bihar'>Central Board Of Patna, Bihar</option>
+							<option value='Central Board Of Education Ajmer New Delhi'>Central Board Of Education Ajmer New Delhi</option>
+							<option value='Goa Board of Secondary & Higher Secondary Education'>Goa Board of Secondary & Higher Secondary Education</option>
+							<option value='Gujarat Secondary Education Board'>Gujarat Secondary Education Board</option>
+							<option value='Himachal Pradesh Board of School Education'>Himachal Pradesh Board of School Education</option>
+							<option value='Indian Board of School Education'>Indian Board of School Education</option>
+							<option value='Indian Board of Computer Education'>Indian Board of Computer Education</option>
+							<option value='J&K State Board of School Education'>J&K State Board of School Education</option>
+							<option value='Jharkhand Academic Council(not recognized)'>Jharkhand Academic Council(not recognized)</option>
+							<option value='Karnataka Board of the Pre-University Education'>Karnataka Board of the Pre-University Education</option>
+							<option value='Karnataka Secondary Education Examination Board'>Karnataka Secondary Education Examination Board</option>
+							<option value='Kerala Board of Public Examinations'>Kerala Board of Public Examinations</option>
+							<option value='Maharashtra State Board of Secondary and Higher Secondary Education'>Maharashtra State Board of Secondary and Higher Secondary Education</option>
+							<option value='Manipur Board of Secondary Education'>Manipur Board of Secondary Education</option>
+							<option value='Manipur Council of Higher Secondary Education'>Manipur Council of Higher Secondary Education</option>
+							<option value='Manipur Board of Secondary Education'>Manipur Board of Secondary Education</option>
+							<option value='Meghalaya Board of School Education'>Meghalaya Board of School Education</option>
+							<option value='Mizoram Board of School Education'>Mizoram Board of School Education</option>
+							<option value='Northwest Accreditation Commission'>Northwest Accreditation Commission</option>
+							<option value='Nagaland Board of School Education'>Nagaland Board of School Education</option>
+							<option value='National Institute of Open Schooling'>National Institute of Open Schooling</option>
+							<option value='Orissa Board of Secondary Education'>Orissa Board of Secondary Education</option>
+							<option value='Orissa Council of Higher Secondary Education'>Orissa Council of Higher Secondary Education</option>
+							<option value='Punjab School Education Board'>Punjab School Education Board</option>
+							<option value='Rajasthan Board of Secondary Education'>Rajasthan Board of Secondary Education</option>
+							<option value='Tamil Nadu Board of Higher Secondary Education'>Tamil Nadu Board of Higher Secondary Education</option>
+							<option value='Tamil Nadu Board of Secondary Education'>Tamil Nadu Board of Secondary Education</option>
+							<option value='Tamilnadu Council for Open and Distance Learning'>Tamilnadu Council for Open and Distance Learning</option>
+							<option value='Tripura Board of Secondary Education'>Tripura Board of Secondary Education</option>
+							<option value='Telangana Board of Intermediate Education'>Telangana Board of Intermediate Education</option>
+							<option value='Telangana Board of Secondary Education'>Telangana Board of Secondary Education</option>
+							<option value='Uttar Pradesh Board of High School and Intermediate Education'>Uttar Pradesh Board of High School and Intermediate Education</option>
+							<option value='Sampurnanand Sanskrit Vishwavidyalaya Varanasi Uttar Pradesh'>Sampurnanand Sanskrit Vishwavidyalaya Varanasi Uttar Pradesh</option>
+							<option value='Telangana Board of Secondary Education'>Telangana Board of Secondary Education</option>
+							<option value='West Bengal Council of Higher Secondary Education'>West Bengal Council of Higher Secondary Education</option>
+							<option value='West Bengal State Council of Vocational Education and Training'>West Bengal State Council of Vocational Education and Training</option>
+							<option value='Board of Secondary Education Kant Shahjahanpur Uttar Pradesh'>Board of Secondary Education Kant Shahjahanpur Uttar Pradesh</option>
+							<option value='Board of Secondary Education Kant Shahjahanpur Uttar Pradesh'>Board of Secondary Education Kant Shahjahanpur Uttar Pradesh</option>
+							<option value='The West Bengal Council of Rabindra Open Schooling'>The West Bengal Council of Rabindra Open Schooling</option>
+							<option value='Institution of Secondary Distance Education (ISDE) Approved by Distance Education Council & Permanent Equivalency granted by MPBSE'>Institution of Secondary Distance Education (ISDE) Approved by Distance Education Council & Permanent Equivalency granted by MPBSE</option>
+						</select>
+				</li>
+				<li>
+					Class XII Board 
+						<select class='common' style="margin-left:41px;width:48%" name='us10'>
+							<option value='all'>All</option>
+							<option value='ICSE'>ICSE</option>
+							<option value='CBSE'>CBSE</option>
+							<option value='State Board'>State Board</option>
+							<option value='Andhra Pradesh Board of Intermediate Education'>Andhra Pradesh Board of Intermediate Education</option>
+							<option value='Andhra Pradesh Board of Secondary Education'>Andhra Pradesh Board of Secondary Education</option>
+							<option value='Board of Higher Secondary Education, Delhi'>Board of Higher Secondary Education, Delhi</option>
+							<option value='Assam Board of Secondary Education'>Assam Board of Secondary Education</option>
+							<option value='Bihar School Examination Board'>Bihar School Examination Board</option>
+							<option value='Central Board of Secondary Education'>Central Board of Secondary Education</option>
+							<option value='Central Board Of Patna, Bihar'>Central Board Of Patna, Bihar</option>
+							<option value='Central Board Of Education Ajmer New Delhi'>Central Board Of Education Ajmer New Delhi</option>
+							<option value='Goa Board of Secondary & Higher Secondary Education'>Goa Board of Secondary & Higher Secondary Education</option>
+							<option value='Gujarat Secondary Education Board'>Gujarat Secondary Education Board</option>
+							<option value='Himachal Pradesh Board of School Education'>Himachal Pradesh Board of School Education</option>
+							<option value='Indian Board of School Education'>Indian Board of School Education</option>
+							<option value='Indian Board of Computer Education'>Indian Board of Computer Education</option>
+							<option value='J&K State Board of School Education'>J&K State Board of School Education</option>
+							<option value='Jharkhand Academic Council(not recognized)'>Jharkhand Academic Council(not recognized)</option>
+							<option value='Karnataka Board of the Pre-University Education'>Karnataka Board of the Pre-University Education</option>
+							<option value='Karnataka Secondary Education Examination Board'>Karnataka Secondary Education Examination Board</option>
+							<option value='Kerala Board of Public Examinations'>Kerala Board of Public Examinations</option>
+							<option value='Maharashtra State Board of Secondary and Higher Secondary Education'>Maharashtra State Board of Secondary and Higher Secondary Education</option>
+							<option value='Manipur Board of Secondary Education'>Manipur Board of Secondary Education</option>
+							<option value='Manipur Council of Higher Secondary Education'>Manipur Council of Higher Secondary Education</option>
+							<option value='Manipur Board of Secondary Education'>Manipur Board of Secondary Education</option>
+							<option value='Meghalaya Board of School Education'>Meghalaya Board of School Education</option>
+							<option value='Mizoram Board of School Education'>Mizoram Board of School Education</option>
+							<option value='Northwest Accreditation Commission'>Northwest Accreditation Commission</option>
+							<option value='Nagaland Board of School Education'>Nagaland Board of School Education</option>
+							<option value='National Institute of Open Schooling'>National Institute of Open Schooling</option>
+							<option value='Orissa Board of Secondary Education'>Orissa Board of Secondary Education</option>
+							<option value='Orissa Council of Higher Secondary Education'>Orissa Council of Higher Secondary Education</option>
+							<option value='Punjab School Education Board'>Punjab School Education Board</option>
+							<option value='Rajasthan Board of Secondary Education'>Rajasthan Board of Secondary Education</option>
+							<option value='Tamil Nadu Board of Higher Secondary Education'>Tamil Nadu Board of Higher Secondary Education</option>
+							<option value='Tamil Nadu Board of Secondary Education'>Tamil Nadu Board of Secondary Education</option>
+							<option value='Tamilnadu Council for Open and Distance Learning'>Tamilnadu Council for Open and Distance Learning</option>
+							<option value='Tripura Board of Secondary Education'>Tripura Board of Secondary Education</option>
+							<option value='Telangana Board of Intermediate Education'>Telangana Board of Intermediate Education</option>
+							<option value='Telangana Board of Secondary Education'>Telangana Board of Secondary Education</option>
+							<option value='Uttar Pradesh Board of High School and Intermediate Education'>Uttar Pradesh Board of High School and Intermediate Education</option>
+							<option value='Sampurnanand Sanskrit Vishwavidyalaya Varanasi Uttar Pradesh'>Sampurnanand Sanskrit Vishwavidyalaya Varanasi Uttar Pradesh</option>
+							<option value='Telangana Board of Secondary Education'>Telangana Board of Secondary Education</option>
+							<option value='West Bengal Council of Higher Secondary Education'>West Bengal Council of Higher Secondary Education</option>
+							<option value='West Bengal State Council of Vocational Education and Training'>West Bengal State Council of Vocational Education and Training</option>
+							<option value='Board of Secondary Education Kant Shahjahanpur Uttar Pradesh'>Board of Secondary Education Kant Shahjahanpur Uttar Pradesh</option>
+							<option value='The West Bengal Council of Rabindra Open Schooling'>The West Bengal Council of Rabindra Open Schooling</option>
+							<option value='Institution of Secondary Distance Education (ISDE) Approved by Distance Education Council & Permanent Equivalency granted by MPBSE'>Institution of Secondary Distance Education (ISDE) Approved by Distance Education Council & Permanent Equivalency granted by MPBSE</option>
+						</select>
+				</li>
+				<li>
+					Department (Graduation) 
+						<select class='common' style="margin-left:-25px;width:48%" name='us11'>
+							<option value='all'>All</option>
+							<option value='Circuits and VLSI'>Circuits and VLSI</option>
+							<option value='Communication Engineering'>Communication Engineering</option>
+							<option value='Signal and Image Processing'>Signal and Image Processing</option>
+							<option value='Controls and Embedded Systems'>Controls and Embedded Systems</option>
+							<option value='Mobile Computing'>Mobile Computing</option>
+							<option value='Data Analytis'>Data Analytis</option>
+							<option value='Image Analysis & Machine Intelligence'>Image Analysis & Machine Intelligence</option>
+							<option value='Security and Privacy'>Security and Privacy</option>
+							<option value='Computer System Architecture'>Computer System Architecture</option>
+							<option value='Computer Science'>Computer Science</option>
+							<option value='Information Technology'>Information Technology</option>
+							<option value='Electronics and Communication'>Electronics and Communication</option>
+						</select>
+				</li>
+				<li>
+					Department (Post Graduation) 
+						<select class='common' style="margin-left:-62px;width:48%" name='us12'>
+							<option value='all'>All</option>
+							<option value='Circuits and VLSI'>Circuits and VLSI</option>
+							<option value='Communication Engineering'>Communication Engineering</option>
+							<option value='Signal and Image Processing'>Signal and Image Processing</option>
+							<option value='Controls and Embedded Systems'>Controls and Embedded Systems</option>
+							<option value='Mobile Computing'>Mobile Computing</option>
+							<option value='Data Analytis'>Data Analytis</option>
+							<option value='Image Analysis & Machine Intelligence'>Image Analysis & Machine Intelligence</option>
+							<option value='Security and Privacy'>Security and Privacy</option>
+							<option value='Computer System Architecture'>Computer System Architecture</option>
+							<option value='Computer Science'>Computer Science</option>
+							<option value='Information Technology'>Information Technology</option>
+							<option value='Electronics and Communication'>Electronics and Communication</option>
+						</select>
+				</li>
+				<li>
+					University (Graduation)<input type='text' name='us15' class='common' style="margin-left:-7px;">
+				</li>
+				<li>
+					University (Post-Graduation)<input type='text' name='us16' class='common' style="margin-left:-45px;">
+				</li>
+				<li>
+					State (Graduation from)
+						<select class='common' style="margin-left:-16px;width:48%" name='us13'>
+							<option value='all'>All</option>
+							<option value='Andhra Pradesh'>Andhra Pradesh</option>
+							<option value='Delhi'>Delhi</option>
+							<option value='New Delhi'>New Delhi</option>
+							<option value='Arunachal Pradesh'>Arunachal Pradesh</option>
+							<option value='Assam'>Assam</option>
+							<option value='Bihar'>Bihar</option>
+							<option value='Chhattisgarh'>Chhattisgarh</option>
+							<option value='Goa'>Goa</option>
+							<option value='Gujarat'>Gujarat</option>
+							<option value='Haryana'>Haryana</option>
+							<option value='Himachal Pradesh'>Himachal Pradesh</option>
+							<option value='Jammu and Kashmir'>Jammu and Kashmir</option>
+							<option value='Jharkhand'>Jharkhand</option>
+							<option value='Karnataka'>Karnataka</option>
+							<option value='Kerala'>Kerala</option>
+							<option value='Madhya Pradesh'>Madhya Pradesh</option>
+							<option value='Maharashtra'>Maharashtra</option>
+							<option value='Manipur'>Manipur</option>
+							<option value='Meghalaya'>Meghalaya</option>
+							<option value='Mizoram'>Mizoram</option>
+							<option value='Nagaland'>Nagaland</option>
+							<option value='Odisha'>Odisha</option>
+							<option value='Punjab'>Punjab</option>
+							<option value='Rajasthan'>Rajasthan</option>
+							<option value='Sikkim'>Sikkim</option>
+							<option value='Rajasthan'>Rajasthan</option>
+							<option value='Tamil Nadu'>Tamil Nadu</option>
+							<option value='Tripura'>Tripura</option>
+							<option value='Uttar Pradesh'>Uttar Pradesh</option>
+							<option value='Uttarakhand'>Uttarakhand</option>
+							<option value='West Bengal'>West Bengal</option>
+						</select>
+				</li>
+				<li>
+					State (Post-Graduation from)
+						<select class='common' style="margin-left:-54px;width:48%" name='us14'>
+							<option value='all'>All</option>
+							<option value='Andhra Pradesh'>Andhra Pradesh</option>
+							<option value='Delhi'>Delhi</option>
+							<option value='New Delhi'>New Delhi</option>
+							<option value='Arunachal Pradesh'>Arunachal Pradesh</option>
+							<option value='Assam'>Assam</option>
+							<option value='Bihar'>Bihar</option>
+							<option value='Chhattisgarh'>Chhattisgarh</option>
+							<option value='Goa'>Goa</option>
+							<option value='Gujarat'>Gujarat</option>
+							<option value='Haryana'>Haryana</option>
+							<option value='Himachal Pradesh'>Himachal Pradesh</option>
+							<option value='Jammu and Kashmir'>Jammu and Kashmir</option>
+							<option value='Jharkhand'>Jharkhand</option>
+							<option value='Karnataka'>Karnataka</option>
+							<option value='Kerala'>Kerala</option>
+							<option value='Madhya Pradesh'>Madhya Pradesh</option>
+							<option value='Maharashtra'>Maharashtra</option>
+							<option value='Manipur'>Manipur</option>
+							<option value='Meghalaya'>Meghalaya</option>
+							<option value='Mizoram'>Mizoram</option>
+							<option value='Nagaland'>Nagaland</option>
+							<option value='Odisha'>Odisha</option>
+							<option value='Punjab'>Punjab</option>
+							<option value='Rajasthan'>Rajasthan</option>
+							<option value='Sikkim'>Sikkim</option>
+							<option value='Rajasthan'>Rajasthan</option>
+							<option value='Tamil Nadu'>Tamil Nadu</option>
+							<option value='Tripura'>Tripura</option>
+							<option value='Uttar Pradesh'>Uttar Pradesh</option>
+							<option value='Uttarakhand'>Uttarakhand</option>
+							<option value='West Bengal'>West Bengal</option>
+						</select>
+				</li>
+				<li>
+					Class 10th Board % 
+					<input type='checkbox' name='x_p1' value='gt' style="margin-left:20%">Greater than
+					<input type='checkbox' name='x_p2' value='eq' style="margin-left:3%">Equals
+					<input type='checkbox' name='x_p3' value='lt' style="margin-left:3%">Less than
+					<input type='number' min=0 max=100 name='x_p_val' placeholder="Percent" style="width:70px;margin-left:1%">
+				</li>
+				<li>
+					Class 12th Board % 
+					<input type='checkbox' name='xii_p1' value='gt' style="margin-left:20%">Greater than
+					<input type='checkbox' name='xii_p2' value='eq' style="margin-left:3%">Equals
+					<input type='checkbox' name='xii_p3' value='lt' style="margin-left:3%">Less than
+					<input type='number' min=0 max=100 name='xii_p_val' placeholder="Percent" style="width:70px;margin-left:1%">
+				</li>
+				<li>
+					Graduation Marks % 
+					<input type='checkbox' name='g_m1' value='gt' style="margin-left:19%">Greater than
+					<input type='checkbox' name='g_m2' value='eq' style="margin-left:3%">Equals
+					<input type='checkbox' name='g_m3' value='lt' style="margin-left:3%">Less than
+					<input type='number' min=0 max=100 name='g_m_val' placeholder="Percent" style="width:70px;margin-left:1%">
+				</li>
+				<li>
+					Post-Graduation Marks % 
+					<input type='checkbox' name='pg_p1' value='gt' style="margin-left:13.2%">Greater than
+					<input type='checkbox' name='pg_p2' value='eq' style="margin-left:3%">Equals
+					<input type='checkbox' name='pg_p3' value='lt' style="margin-left:3%">Less than
+					<input type='number' min=0 max=100 name='pg_val' placeholder="Percent" style="width:70px;margin-left:1%">
+				</li>
+				<li>
+					Gate Score
+					<input type='checkbox' name='gate_p1' value='gt' style="margin-left:29%">Greater than
+					<input type='checkbox' name='gate_p2' value='eq' style="margin-left:3%">Equals
+					<input type='checkbox' name='gate_p3' value='lt' style="margin-left:3%">Less than
+					<input type='number' min=0 max=1000 name='gate_pval' placeholder="Score" style="width:70px;margin-left:1%">
+				</li>
+			</ul>
+		</div>
+		<div id='form_3' style="display:none">
+			<ul style='margin:0;padding:0;list-style: none;overflow: auto;'>
+				<li>
+					Application Dated from<input id='date_from' type='date' name='us22' class='common'>
+				</li>
+				<li>
+					Application Dated Upto<input id='date_upto' type='date' name='us23' class='common' style="margin-left:-8px;">
+				</li>
+				<li>
+					<br>
+					<input type='submit' name='submit' value='Show Filtered Results' style='padding:7px 20px 7px 20px;'>
+				</li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+	$('#upper_tabs ul li').eq(0).click(function(){
+		$('#upper_tabs ul li').css('background-color','indigo');
+		$(this).css('background-color','#33cc33');
+		$('#form_1').show();
+		$('#form_2').hide();
+		$('#form_3').hide();
+	});
+	$('#upper_tabs ul li').eq(1).click(function(){
+		$('#upper_tabs ul li').css('background-color','indigo');
+		$(this).css('background-color','#33cc33');
+		$('#form_1').hide();
+		$('#form_2').show();
+		$('#form_3').hide();
+	});
+	$('#upper_tabs ul li').eq(2).click(function(){
+		$('#upper_tabs ul li').css('background-color','indigo');
+		$(this).css('background-color','#33cc33');
+		$('#form_1').hide();
+		$('#form_2').hide();
+		$('#form_3').show();
+	});
+	var d = new Date();
+	var month = d.getMonth()+1;
+	var day = d.getDate();
+	var finaldate = d.getFullYear() + '-' + (month<10 ? '0' : '') + month + '-' + (day<10 ? '0' : '') + day;
+
+	$('[name="date"]').attr('max', finaldate);
+	$('[name="us22"]').attr('max', finaldate);
+	$('[name="us23"]').attr('max', finaldate);
+	
+</script>
+</body>
+</html>

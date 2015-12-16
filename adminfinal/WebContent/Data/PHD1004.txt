@@ -1,0 +1,31 @@
+Email :deepak14036@iiitd.ac.in
+Name :sasa
+Enrollment Number :PHD1004
+Address of Correspondence :wqq
+Mobile :2121212122
+PHD Stream :Computer Science
+PhD Area Preference 1 :Software Engineering - CSE
+PhD Area Preference 2 :Theoretical Computer Science - CSE
+PhD Area Preference 3 :Machine Learning - CSE
+Gender :Male
+Category :General
+Physically Disabled :No
+Date Of Birth :2015-12-02
+Father's Name :sa
+Nationality :batswana
+Permanent address :asas
+Pin Code :11
+X Board :asas
+X Board(%) :22
+X Year :2013
+XII Board :asas
+XIIth Board(%) :22
+XII Year :1999
+Graduation Degree :saas
+Graduation Department :qwqw
+Graduation College :qwqw
+Graduation University :qwqw
+Graduation City :qw
+Graduation State :Kerala
+Graduation Year :1998
+Graduation Marks :50.0 (CGPA - 2 ) 

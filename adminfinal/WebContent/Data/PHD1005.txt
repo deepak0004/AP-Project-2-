@@ -1,0 +1,31 @@
+Email :vkt301265@gmail.com
+Name :asas
+Enrollment Number :PHD1005
+Address of Correspondence :qwqw
+Mobile :2222222222
+PHD Stream :Computer Science
+PhD Area Preference 1 :Wireless Networks - CSE
+PhD Area Preference 2 :Theoretical Computer Science - CSE
+PhD Area Preference 3 :Security and Privacy - CSE
+Gender :Male
+Category :SC
+Physically Disabled :Yes
+Date Of Birth :2015-12-02
+Father's Name :asas
+Nationality :barbadian
+Permanent address :asas
+Pin Code :22121
+X Board :assa
+X Board(%) :12
+X Year :1997
+XII Board :asas
+XIIth Board(%) :2
+XII Year :2015
+Graduation Degree :assa
+Graduation Department :assa
+Graduation College :ff
+Graduation University :dsds
+Graduation City :dsds
+Graduation State :Chandigarh
+Graduation Year :1999
+Graduation Marks :50.0 (CGPA - 2 ) 
